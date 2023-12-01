@@ -1,6 +1,6 @@
 # Python-Batch-Ofuscator 
 
-<h2>Obfuscate all your .py files in a folder using <a href="https://github.com/astrand/pyobfuscate" target="_blank">pyobfuscate</a> with a simple command</h2>
+<h4>Obfuscate all your .py files in a folder using <a href="https://github.com/astrand/pyobfuscate" target="_blank">pyobfuscate</a> with a simple command</h4>
 
 <h3>:construction: Working enviroment: :warning:WARNING: commands valid on Windows 11. Other operating systems may need to use other forms of installation:warning:</h3>
 <li>Install <b>Python 3.10.9</b></li> 
