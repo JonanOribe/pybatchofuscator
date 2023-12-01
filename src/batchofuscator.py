@@ -14,11 +14,11 @@ def launch_batch_ofuscator(path):
         if('.py' in file):
             python_files.append(file)
             ofuscateFile(file)
-    print(python_files)
-    return True
+    print('Encrypted files: '+str(python_files))
 
 def ofuscateFile(file):
     new_file_name:str = file.split('.py')[0]+"__obfu__.py"
+    print('New file: '+new_file_name)
     Obfuscator(
     file,
     new_file_name,
