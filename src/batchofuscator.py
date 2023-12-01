@@ -18,7 +18,7 @@ def launch_batch_ofuscator(path):
     return True
 
 def ofuscateFile(file):
-    new_file_name:str = file.split('.py')[0]+"obfu.py"
+    new_file_name:str = file.split('.py')[0]+"__obfu__.py"
     Obfuscator(
     file,
     new_file_name,
