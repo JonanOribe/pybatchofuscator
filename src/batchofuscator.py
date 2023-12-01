@@ -1,4 +1,5 @@
 from os import listdir
+import os
 from os.path import isfile, join
 from typing import List
 from PyObfuscator import Obfuscator, Name
@@ -6,8 +7,10 @@ from src.generics.utils_functions import get_config_file_data
 config,config_file = get_config_file_data()
 config.read(config_file)
 PASSWORD:str = config._defaults['encryption_password']
+dist_path = "./dist/"
 
 def launch_batch_ofuscator(path):
+    create_dist_path(dist_path)
     python_files:List[str] = []
     onlyfiles = [f for f in listdir(path[-1]) if isfile(join(path[-1], f))]
     for file in onlyfiles:
@@ -17,7 +20,7 @@ def launch_batch_ofuscator(path):
     print('Encrypted files: '+str(python_files))
 
 def ofuscateFile(file):
-    new_file_name:str = file.split('.py')[0]+"__obfu__.py"
+    new_file_name:str = './dist/'+file.split('.py')[0]+"__obfu__.py"
     print('New file: '+new_file_name)
     Obfuscator(
     file,
@@ -33,3 +36,9 @@ def ofuscateFile(file):
     "utf-8",
     8,
     ).default_obfuscation()
+
+def create_dist_path(path):
+    if(os.path.exists(path)!=True):
+        os.makedirs(path)
+        print("The new directory is created! You will find your encrypted files in: "+path)
+       
