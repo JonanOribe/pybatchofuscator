@@ -2,7 +2,6 @@ import os
 from configparser import ConfigParser
 import platform
 
-
 def get_config_file_data():
     os_platform = platform.platform()
     separator ='/'

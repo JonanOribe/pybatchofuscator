@@ -2,6 +2,10 @@ from os import listdir
 from os.path import isfile, join
 from typing import List
 from PyObfuscator import Obfuscator, Name
+from src.generics.utils_functions import get_config_file_data
+config,config_file = get_config_file_data()
+config.read(config_file)
+PASSWORD:str = config._defaults['encryption_password']
 
 def launch_batch_ofuscator(path):
     python_files:List[str] = []
@@ -25,7 +29,7 @@ def ofuscateFile(file):
         "name3": Name("name3", "obfu_name3", False, None),
     },
     True,
-    "mypassword",
+    config._defaults['encryption_password'],
     "utf-8",
     8,
     ).default_obfuscation()
