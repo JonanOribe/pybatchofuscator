@@ -130,3 +130,4 @@ dmypy.json
 
 # Generics
 *__obfu__.py
+./deobfuscate.json
