@@ -28,7 +28,6 @@ def callbackIgnore(paths):
                   if (pathlib.PurePath(directory, f).match(p)):
                       arr.append(f)
           return arr
-  
       return ignoref
 
 def copy_path(from_path, to_path):
