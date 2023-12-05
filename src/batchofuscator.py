@@ -23,12 +23,11 @@ def launch_batch_ofuscator(path):
 
 def ofuscateFile(file):
     file = file.replace('\\','/')
-    new_file_name:str = (file.split('.py')[0]+"__obfu__.py")
-    print('New file: '+new_file_name)
+    print('New file: '+file)
     try:
         Obfuscator(
         file,
-        new_file_name,
+        file,
         6,
         {
             "name1": Name("name1", "obfu_name1", False, None),
@@ -40,7 +39,7 @@ def ofuscateFile(file):
         "utf-8",
         8,
         ).default_obfuscation()
-        os.remove(file)
+        #os.remove(file)
     except Exception as e:
         print(e)
 
