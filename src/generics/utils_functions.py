@@ -31,7 +31,7 @@ def callbackIgnore(paths):
       return ignoref
 
 def copy_path(from_path, to_path):
-    paths_to_ignore = ['.git','env','.vscode','.gitignore','__pycache__','__init__.py']
+    paths_to_ignore = ['.git','.vscode','.gitignore','__pycache__']
     if os.path.exists(to_path):
         shutil.rmtree(to_path)
     shutil.copytree(from_path, to_path,ignore=callbackIgnore(paths_to_ignore))

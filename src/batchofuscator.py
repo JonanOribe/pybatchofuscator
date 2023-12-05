@@ -16,7 +16,7 @@ def launch_batch_ofuscator(path):
     copy_path(path[-1],final_dist_path)
     valid_paths = read_path_subfolder_files([f for f in listdir(path[-1])])
     for file in valid_paths:
-        if('.py' in file):
+        if('\\env\\' not in file and '.py' in file):
             python_files.append(file)
             ofuscateFile(file)
     print('Encrypted files: '+str(python_files))
